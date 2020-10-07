@@ -1,16 +1,99 @@
 <!--
 author:   Philipp Wabnitz
-version:  0.0.2
+version:  0.0.3
 language: en
 comment:  Just some LiaScript tests
-import: https://raw.githubusercontent.com/LiaTemplates/mec2/main/README.md
+
+script:
+    https://unpkg.com/@google/model-viewer@v0.8.0/dist/model-viewer-legacy.js
+    https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js
+
+@mv: <model-viewer src="@2" ios-src="@1" alt="@0" background-color="grey" shadow-intensity="1" camera-controls ar ar-scale="fixed" interaction-prompt="auto" auto-rotate magic-leap style="width:100%;height:400px"></model-viewer>
+
+import:
+    https://raw.githubusercontent.com/LiaTemplates/mermaid_template/master/README.md
+    https://raw.githubusercontent.com/LiaTemplates/processingjs/master/README.md
+    https://raw.githubusercontent.com/LiaTemplates/aframe/master/README.md
+    https://raw.githubusercontent.com/LiaTemplates/mec2/main/README.md
 -->
 
 # LiaTests
 
-Just some tests with LiaScript
+Just some tests with LiaScript.
+Load the course: https://liascript.github.io/course/?https://raw.githubusercontent.com/pwab/LiaTests/main/README.md
+
+# mermaidJS
+
+``` @mermaid(2)
+graph TD
+A[Client] --> B[Load Balancer]
+B --> C[Server01]
+B --> D[Server02]
+```
+
+# model-viewer
+
+Should really be added to the template repository.
+
+@mv(A 3D model of an astronaut,
+  https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz,
+  https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb)
+
+# A-Frame
+
+In the manual of the template it is stated that it shouldn't be imported. Are there any advantages or disadvantages because of that?
+
+<div style="height: 400px; width: 100%">
+<a-scene embedded background="color: #ECECEC">
+  <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+  <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+  <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+</a-scene>
+</div>
+
+# ProcessingJS
+
+Move the robot
+
+```p5 -Roboterarm
+float x, y;
+float angle1 = 0.0;
+float angle2 = 0.0;
+float segLength = 100;
+
+void setup() {
+  size(640, 360);
+  strokeWeight(30);
+  stroke(255, 160);
+
+  x = width * 0.3;
+  y = height * 0.5;
+}
+
+void draw() {
+  background(0);
+
+  angle1 = (mouseX/float(width) - 0.5) * -2*PI;
+  angle2 = (mouseY/float(height) - 0.5) * 2*PI;
+
+  pushMatrix();
+  segment(x, y, angle1);
+  segment(segLength, 0, angle2);
+  popMatrix();
+}
+
+void segment(float x, float y, float a) {
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+}
+```
+@Processing.eval()
 
 ## mec2
+
+Want to see some pendulums swing?
 
 ``` json @mec2
 {
