@@ -1,14 +1,15 @@
 <!--
 author:   Philipp Wabnitz
-version:  0.0.3
+version:  0.0.4
 language: en
 comment:  Just some LiaScript tests
 
 script:
-    https://unpkg.com/@google/model-viewer@v0.8.0/dist/model-viewer-legacy.js
+    https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js
+    https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js
     https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js
 
-@mv: <model-viewer src="@2" ios-src="@1" alt="@0" background-color="grey" shadow-intensity="1" camera-controls ar ar-scale="fixed" interaction-prompt="auto" auto-rotate magic-leap style="width:100%;height:400px"></model-viewer>
+@mv: <model-viewer src="@1" alt="@0" auto-rotate camera-controls></model-viewer>
 
 import:
     https://raw.githubusercontent.com/LiaTemplates/mermaid_template/master/README.md
@@ -20,9 +21,12 @@ import:
 # LiaTests
 
 Just some tests with LiaScript.
+
 Load the course: https://liascript.github.io/course/?https://raw.githubusercontent.com/pwab/LiaTests/main/README.md
 
-# mermaidJS
+## mermaidJS
+
+Create some graphs.
 
 ``` @mermaid(2)
 graph TD
@@ -31,15 +35,13 @@ B --> C[Server01]
 B --> D[Server02]
 ```
 
-# model-viewer
+## model-viewer
 
 Should really be added to the template repository.
 
-@mv(A 3D model of an astronaut,
-  https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz,
-  https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb)
+@mv(A 3D model of an astronaut, https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb)
 
-# A-Frame
+## A-Frame
 
 In the manual of the template it is stated that it shouldn't be imported. Are there any advantages or disadvantages because of that?
 
@@ -52,7 +54,7 @@ In the manual of the template it is stated that it shouldn't be imported. Are th
 </a-scene>
 </div>
 
-# ProcessingJS
+## ProcessingJS
 
 Move the robot
 
