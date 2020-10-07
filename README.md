@@ -1,13 +1,13 @@
 <!--
 author:   Philipp Wabnitz
-version:  0.0.1
-language: de
-narrator: US English Female
+version:  0.0.2
+language: en
 comment:  Just some LiaScript tests
-import: https://github.com/liaTemplates/mec2/README.md
+import: https://raw.githubusercontent.com/LiaTemplates/mec2/main/README.md
 -->
 
 # LiaTests
+
 Just some tests with LiaScript
 
 ## mec2
