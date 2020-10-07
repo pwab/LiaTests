@@ -1,6 +1,6 @@
 <!--
 author:   Philipp Wabnitz
-version:  0.0.4
+version:  0.0.5
 language: en
 comment:  Just some LiaScript tests
 
@@ -9,7 +9,7 @@ script:
     https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js
     https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js
 
-@mv: <model-viewer src="@1" alt="@0" auto-rotate camera-controls></model-viewer>
+@mv: <model-viewer src="@0" alt="@1" auto-rotate camera-controls></model-viewer>
 
 import:
     https://raw.githubusercontent.com/LiaTemplates/mermaid_template/master/README.md
@@ -39,7 +39,24 @@ B --> D[Server02]
 
 Should really be added to the template repository.
 
-@mv(A 3D model of an astronaut, https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb)
+@mv(https://modelviewer.dev/shared-assets/models/Astronaut.glb, A model of an astronaut)
+
+[Astronaut](https://poly.google.com/view/dLHpzNdygsg) by [Poly](https://poly.google.com/user/4aEd8rQgKu2), licensed under [CC-BY](https://creativecommons.org/licenses/by/2.0/).
+
+<model-viewer id="paused-change-demo" camera-controls autoplay animation-name="Running" ar shadow-intensity="1" src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" alt="An animated 3D model of a robot"></model-viewer>
+  <script>
+  (() => {
+    const modelViewer = document.querySelector('#paused-change-demo');
+
+    self.setInterval(() => {
+      modelViewer.animationName = modelViewer.animationName === 'Running' ?
+        'Wave' : 'Running';
+    }, 1500.0);
+  })();
+  </script>
+
+[RobotExpressive](https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf/RobotExpressive) by [Tomás Laulhé](https://www.patreon.com/quaternius), licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/). 
+
 
 ## A-Frame
 
