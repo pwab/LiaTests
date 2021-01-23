@@ -1,6 +1,6 @@
 <!--
 author:   Philipp Wabnitz
-version:  0.0.5
+version:  0.0.6
 language: en
 comment:  Just some LiaScript tests
 
