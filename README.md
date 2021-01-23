@@ -32,7 +32,7 @@ Load the course: https://liascript.github.io/course/?https://raw.githubuserconte
 
 ### local
 
-<iframe src="web/index.html"></iframe>
+<iframe src="https://pwab.github.io/LiaTests/web/index.html"></iframe>
 
 ## mermaidJS
 
