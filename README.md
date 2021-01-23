@@ -24,6 +24,16 @@ Just some tests with LiaScript.
 
 Load the course: https://liascript.github.io/course/?https://raw.githubusercontent.com/pwab/LiaTests/main/README.md
 
+## Iframe
+
+### global
+
+<iframe src="https://liascript.github.io"></iframe>
+
+### local
+
+<iframe src="test.html"></iframe>
+
 ## mermaidJS
 
 Create some graphs.
